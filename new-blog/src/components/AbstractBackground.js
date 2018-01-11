@@ -1,10 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 class AbstractBackground extends React.Component{
-    constructor(){
-        super();
-    }
-
+  
     render(){
         return(
           <div className="AbstractBackground"></div>
