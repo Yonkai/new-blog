@@ -1,3 +1,5 @@
+
+/** 
 import React from 'react';
 
 class example extends React.Component{
@@ -23,3 +25,4 @@ class example extends React.Component{
 }
 
 export default example;
+**/
