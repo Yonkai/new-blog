@@ -1,0 +1,21 @@
+ {
+  "blog-post-1":{
+    "title":"Example",
+    "body":"Example",
+    "video":false,
+    "image":false
+
+  },
+  "blog-post-2":{
+    "title":"Example",
+    "body":"Example",
+    "video":false,
+    "image":false
+  },
+  "blog-post-3":{
+      "title":"Example",
+      "body":"Example",
+      "video":false,
+      "image":false
+  }
+}

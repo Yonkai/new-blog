@@ -1,0 +1,47 @@
+/** Represents a mockway of setting up the page.
+.container{
+    display:flex;
+    background-color:red;
+    justify-content:center;
+    width:100%;
+    height:100px;
+    padding:0;
+    margin:0;
+  }
+  
+.sub{
+    background-color:blue;
+    width:80%;
+   
+  }
+  
+  .container1{
+    display:flex;
+    background-color:green;
+    justify-content:center;
+    width:100%;
+    height:100px;
+    padding:0;
+    margin:0;
+  }
+  
+.sub1{
+    background-color:purple;
+    width:80%;
+   
+  }
+body{
+  margin:0;
+}
+
+<div class="container">
+ <div class ="sub">
+ </div>
+</div>
+<div class="container1">
+ <div class ="sub1">
+ </div>
+</div>
+^convert to JSX, See in JSX/React Mockup exactly what
+I mean.
+**/
