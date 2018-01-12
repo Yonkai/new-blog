@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import AbstractBackground from './AbstractBackground';
+import MainTitleFirstContainer from './MainTitleFirstContainer';
+import FirstContentContainer from './FirstContentContainer';
 
 class Application extends Component {
   render() {
