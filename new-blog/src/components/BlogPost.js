@@ -4,7 +4,7 @@ import BlogPostTitle from './BlogPostTitle';
 class BlogPost extends Component {
     render() {
         return (
-            <div class="BlogPost">
+            <div className="BlogPost">
                <BlogPostTitle/>
             </div>
         )

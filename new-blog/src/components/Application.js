@@ -4,6 +4,16 @@ import MainTitleFirstContainer from './MainTitleFirstContainer';
 import FirstContentContainer from './FirstContentContainer';
 
 class Application extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state =  {};
+  }
+
+  componentWillMount() {
+    console.log('Root application mounted.');
+  }
+
   render() {
     return (
       <div className="Application">
