@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import SecondContentContainer from './SecondContentContainer';
+
 class FirstContentContainer extends Component {
 
     render() {
         return (
-            <div class="FirstContentContainer"></div>
+            <SecondContentContainer/>
         )
     }
 }
