@@ -5,7 +5,7 @@ class BlogPost extends Component {
     render() {
         return (
             <div className="BlogPost">
-               <BlogPostTitle/> {/** Used keys and map for teasing out blog data **/}
+               <BlogPostTitle/> {/** Use keys and map for teasing out blog data **/}
             </div>
         )
     }
