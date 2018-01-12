@@ -6,12 +6,10 @@ class AbstractBackground extends React.Component {
         const canvas = this.refs.canvas;
         const context = canvas.getContext("2d");
         
-        context.beginPath();
-        context.moveTo(50, 50);
-        context.lineTo(100, 100);
-        context.lineTo(0,100);
-        context.lineTo(50,50);
-        context.stroke();
+        /*Recreate sharded glass effect in canvas, add an event listener for a screen resize.
+         Should it be in state?
+        */
+
       }
 
     render() {
