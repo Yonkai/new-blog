@@ -19,10 +19,9 @@ class AbstractBackground extends React.Component {
     }
 
     componentDidMount() {
-        const canvas = this.refs.canvas;
-        const context = canvas.getContext("2d");
+
         this.updateDimensions();
-        //Allows of automatic updating of state with regards to window dimensions.
+        //Allows automatic updating of state and window dimensions.
         window.addEventListener('resize', this.updateDimensions);
 
         /*Recreate sharded glass effect in canvas, add an event listener for a screen resize.[X]
@@ -33,6 +32,27 @@ class AbstractBackground extends React.Component {
 
     renderCanvasBackground(){
         console.log(this.state.dimensions.width,this.state.dimensions.height);
+
+        const canvas = this.refs.canvas;
+        const context = canvas.getContext("2d");
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+        const pointA = this.state.dimensions.width*.1;
+        const pointB = this.state.dimensions.height*.1;
+
+        const pointD = this.state.dimensions.width*.9;
+        const pointC = this.state.dimensions.height*.1;
+
+        const pointE = this.state.dimensions.width*.5;
+        const pointF = this.state.dimensions.height*.9;
+
+        context.beginPath();
+        context.moveTo(pointA, pointB);
+        context.lineTo(pointD, pointC);
+        context.lineTo(pointE, pointF);
+        context.fill();
     }
 
     updateDimensions() {
@@ -47,7 +67,7 @@ class AbstractBackground extends React.Component {
     render() {
         return (
             <div className="AbstractBackground">
-                <canvas ref="canvas" width={555} height={555}/> {/* Convert to UI State Later from the window object off application component*/}
+                <canvas ref="canvas" width={this.state.dimensions.width} height={this.state.dimensions.height}/> {/* Convert to UI State Later from the window object off application component*/}
             </div>
         )
     }
