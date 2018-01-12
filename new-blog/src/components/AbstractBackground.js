@@ -8,9 +8,13 @@ class AbstractBackground extends React.Component {
         this.updateDimensions = this
             .updateDimensions
             .bind(this);
-            
+
+        this.renderCanvasBackground = this
+            .renderCanvasBackground
+            .bind(this);
+
         this.state = {
-            dimensions: {width:null,height:null}
+            dimensions: {width:0,height:0}
         }
     }
 
@@ -18,25 +22,26 @@ class AbstractBackground extends React.Component {
         const canvas = this.refs.canvas;
         const context = canvas.getContext("2d");
         this.updateDimensions();
+        //Allows of automatic updating of state with regards to window dimensions.
+        window.addEventListener('resize', this.updateDimensions);
 
-        /*Recreate sharded glass effect in canvas, add an event listener for a screen resize.
-
-         1. Detect+Set Dimensions on initial rendering in React. Sets background.
-         2. During intial rendering, set a callback listener to recall the initial rendering code to update state and canvas. -loops around.-
+        /*Recreate sharded glass effect in canvas, add an event listener for a screen resize.[X]
+         1. Detect+Set Dimensions on initial rendering in React. Sets background.[X]
+         2. During intial rendering, set a callback listener to recall the initial rendering code to update state and canvas. -loops around.-[X]
         */
-       
+    }
 
+    renderCanvasBackground(){
+        console.log(this.state.dimensions.width,this.state.dimensions.height);
     }
 
     updateDimensions() {
         this.setState({
             dimensions: {
-                width:5,
-                height: 5
+                width: window.innerWidth, 
+                height: window.innerHeight
             },
-        },function(){
-            console.log(this.state.dimensions.width,this.state.dimensions.height);
-        });
+        },this.renderCanvasBackground);
     }
 
     render() {
