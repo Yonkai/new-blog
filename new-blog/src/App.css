@@ -45,3 +45,7 @@ body{
 ^convert to JSX, See in JSX/React Mockup exactly what
 I mean.
 **/
+
+body{
+  margin:0;
+}
