@@ -1,7 +1,7 @@
 import React from 'react';
 
 class AbstractBackground extends React.Component {
-
+//Use this: https://codepen.io/Yonkai/pen/JMazpr?editors=0010
     constructor(props) {
         super(props);
 
