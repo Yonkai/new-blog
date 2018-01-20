@@ -46,7 +46,8 @@ body{
 I mean.
 **/
 
-body{
-  margin:0px;
+html, body {
+  margin: 0;
+  overflow: hidden;
   background-color:black;
 }

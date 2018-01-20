@@ -30,7 +30,7 @@ class AbstractBackground extends React.Component {
          -Animating gradients and localizing them to triangles[ ],
          -Color Dodge[] and glow[ ]
          -Intergrate with scaling[ ]
-         -Make sure it doesn't burn out the CPU[ ]
+         -Make sure it doesn't burn out the CPU[X]
          
         add an event listener for a screen resize.[X]
          1. Detect+Set Dimensions on initial rendering in React. Sets background.[X]
@@ -44,23 +44,48 @@ class AbstractBackground extends React.Component {
         const canvas = this.refs.canvas;
         const context = canvas.getContext('2d');
 
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-
-        const pointA = this.state.dimensions.width*.1;
-        const pointB = this.state.dimensions.height*.1;
-
-        const pointD = this.state.dimensions.width*.9;
-        const pointC = this.state.dimensions.height*.1;
-
-        const pointE = this.state.dimensions.width*.5;
-        const pointF = this.state.dimensions.height*.9;
-
-        context.beginPath();
-        context.moveTo(pointA, pointB);
-        context.lineTo(pointD, pointC);
-        context.lineTo(pointE, pointF);
-        context.fill();
+        var ref;
+        var shiftingValue = 0.1;
+        var wavePos = 0;
+        resizeCanvas.call(this);
+        
+        function flowGrad() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        
+            var lineargradient = context.createLinearGradient(canvas.width/2, 0, canvas.width/2, canvas.height);
+            lineargradient.addColorStop(0, 'rgba(255,0,0,.2)');
+            lineargradient.addColorStop(wavePos, 'rgba(0,255,0,.5)');
+            lineargradient.addColorStop(1, 'rgba(0,0,255,.2)');
+        
+            context.fillStyle = lineargradient;
+        
+            context.beginPath();
+            context.moveTo(0, 0);
+            context.lineTo(canvas.width, 0);
+            context.lineTo(canvas.width/2, canvas.height);
+            context.fill();
+        
+            shiftingValue += 0.01;
+            wavePos = Math.abs(Math.sin(shiftingValue));
+            ref = requestAnimationFrame(flowGrad);
+        }
+        
+        function init() {
+            // Register an event listener to call the resizeCanvas() function 
+            // each time the window is resized.
+            window.addEventListener('resize', resizeCanvas, false);
+            // cancel current frame, if any
+            cancelAnimationFrame(ref); 
+            ref = requestAnimationFrame(flowGrad);
+         
+        }
+        
+        function resizeCanvas() {
+            canvas.width = this.state.dimensions.width;
+            canvas.height = this.state.dimensions.height;
+        }
+        
+        init();
     }
 
     updateDimensions() {
