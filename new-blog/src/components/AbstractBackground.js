@@ -43,11 +43,11 @@ class AbstractBackground extends React.Component {
 
         const canvas = this.refs.canvas;
         const context = canvas.getContext('2d');
-
+        var _this = this;
         var ref;
         var shiftingValue = 0.1;
         var wavePos = 0;
-        resizeCanvas.call(this);
+        resizeCanvas();
         
         function flowGrad() {
             context.clearRect(0, 0, canvas.width, canvas.height);
@@ -81,8 +81,8 @@ class AbstractBackground extends React.Component {
         }
         
         function resizeCanvas() {
-            canvas.width = this.state.dimensions.width;
-            canvas.height = this.state.dimensions.height;
+            canvas.width = _this.state.dimensions.width;
+            canvas.height = _this.state.dimensions.height;
         }
         
         init();
