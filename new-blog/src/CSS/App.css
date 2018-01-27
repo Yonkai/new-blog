@@ -51,3 +51,19 @@ html, body {
   overflow: hidden;
   background-color:black;
 }
+
+.ReMoVe{
+  color:white;
+  margin:0;
+  background-color:rgba(0,0,0,.0);
+}
+
+.AbstractBackgroundContainer{
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.ActualCanvas{
+z-index:-1;
+}

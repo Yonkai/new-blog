@@ -99,8 +99,8 @@ class AbstractBackground extends React.Component {
 
     render() {
         return (
-            <div className="AbstractBackground">
-                <canvas ref="canvas" width={this.state.dimensions.width} height={this.state.dimensions.height}/> {/* Convert to UI State Later from the window object off application component*/}
+            <div className="AbstractBackgroundContainer">
+                <canvas className="ActualCanvas" ref="canvas" width={this.state.dimensions.width} height={this.state.dimensions.height}/> {/* Convert to UI State Later from the window object off application component*/}
             </div>
         )
     }
