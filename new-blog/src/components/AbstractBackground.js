@@ -45,7 +45,8 @@ class AbstractBackground extends React.Component {
         const context = canvas.getContext('2d');
         var _this = this;
         var ref;
-        var shiftingValue = 0.1;
+        var shiftingValue = 0.01;
+        var shiftingSpeed = 0.002;
         var wavePos = 0;
         resizeCanvas();
         
@@ -53,9 +54,9 @@ class AbstractBackground extends React.Component {
             context.clearRect(0, 0, canvas.width, canvas.height);
         
             var lineargradient = context.createLinearGradient(canvas.width/2, 0, canvas.width/2, canvas.height);
-            lineargradient.addColorStop(0, 'rgba(255,0,0,.2)');
-            lineargradient.addColorStop(wavePos, 'rgba(0,255,0,.5)');
-            lineargradient.addColorStop(1, 'rgba(0,0,255,.2)');
+            lineargradient.addColorStop(0, 'rgba(255,0,0,.1)');
+            lineargradient.addColorStop(wavePos, 'rgba(0,255,0,.2)');
+            lineargradient.addColorStop(1, 'rgba(0,0,255,.1)');
         
             context.fillStyle = lineargradient;
         
@@ -65,7 +66,7 @@ class AbstractBackground extends React.Component {
             context.lineTo(canvas.width/2, canvas.height);
             context.fill();
         
-            shiftingValue += 0.01;
+            shiftingValue += shiftingSpeed;
             wavePos = Math.abs(Math.sin(shiftingValue));
             ref = requestAnimationFrame(flowGrad);
         }
