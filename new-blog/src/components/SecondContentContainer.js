@@ -4,7 +4,7 @@ import BlogPost from './BlogPost';
 class SecondContentContainer extends Component {
   
     render() { 
-        return (  <BlogPost/> )
+        return ( <div className="SecondContentContainer"><BlogPost/></div> )
     }
 }
  

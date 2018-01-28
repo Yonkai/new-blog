@@ -85,3 +85,21 @@ z-index:-1;
   width:80%;
 
 }
+
+
+.FirstContentContainer{
+  display:flex;
+  background-color:purple;
+  justify-content:center;
+  width:100%;
+  height:100px;
+  padding:0;
+  margin:0;
+}
+
+.SecondContentContainer{
+
+  background-color:green;
+  width:80%;
+
+}

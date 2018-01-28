@@ -5,7 +5,7 @@ class FirstContentContainer extends Component {
 
     render() {
         return (
-            <SecondContentContainer/>
+           <div className="FirstContentContainer"> <SecondContentContainer/> </div>
         )
     }
 }
