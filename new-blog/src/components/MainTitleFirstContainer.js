@@ -5,7 +5,7 @@ class MainTitleFirstContainer extends Component {
 
     render() {
         return (
-            <div className="MainTitleFirstContaier"><MainTitle/></div>
+            <div className="MainTitleFirstContainer"><MainTitle/></div>
         )
     }
 }
