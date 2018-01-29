@@ -39,7 +39,7 @@ class AbstractBackground extends React.Component {
     }
 
     renderCanvasBackground(){
-        console.log(this.state.dimensions.width,this.state.dimensions.height);
+      
 
         const canvas = this.refs.canvas;
         const context = canvas.getContext('2d');
