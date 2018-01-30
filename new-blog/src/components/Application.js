@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import AbstractBackground from './AbstractBackground';
 import MainTitleFirstContainer from './MainTitleFirstContainer';
 import FirstContentContainer from './FirstContentContainer';
+import content from '../content-of-blog.js';
 
 class Application extends Component {
 
@@ -12,6 +13,7 @@ class Application extends Component {
 
   componentWillMount() {
     console.log('Root application mounted.');
+    console.log(content);
   }
 
   render() {
