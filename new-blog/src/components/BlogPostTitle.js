@@ -9,7 +9,7 @@ class BlogPostTitle extends Component {
     render() { 
         return (    
                <div className="BlogPostTitle">
-                  <h2>Post title</h2>    
+                  <h2>Nobody ever likes the first try.</h2>    
                </div> 
             )
     }

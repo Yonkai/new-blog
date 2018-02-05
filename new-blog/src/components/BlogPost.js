@@ -11,7 +11,7 @@ class BlogPost extends Component {
             <div className="BlogPost">
                <BlogPostTitle/>
                <p>{content["blogpost1"]["title"]}</p>
-               <p>Post image. </p>
+               <p>{content["blogpost1"]["body"]} </p>
                <p>Post comment section, accordion?</p> {/** Use keys and map for teasing out blog data **/}
             </div>
         )
