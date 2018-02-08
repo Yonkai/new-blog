@@ -45,6 +45,9 @@ class AbstractBackground extends React.Component {
         const context = canvas.getContext('2d');
         var _this = this;
         var ref;
+        /*
+          OPTIMIZATION: Change these some how to avoid anti-aliasing, see MDN on optimizing canvas for more details
+        */
         var shiftingValue = 0.01;
         var shiftingSpeed = 0.002;
         var wavePos = 0;
@@ -59,7 +62,10 @@ class AbstractBackground extends React.Component {
             lineargradient.addColorStop(1, 'rgba(0,0,255,.1)');
         
             context.fillStyle = lineargradient;
-        
+        /* 
+            OPTIMIZATION: Change to a multilayer canvas animation, as this doesn't change, its being rerendered 
+            for no reason I think, 
+        */
             context.beginPath();
             context.moveTo(0, 0);
             context.lineTo(canvas.width, 0);
